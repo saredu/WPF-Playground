@@ -1,0 +1,21 @@
+﻿<Application x:Class="SeveralViewsGui.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:subViewModels="clr-namespace:SeveralViewsGui.SubViews.ViewModels"
+             xmlns:subViews="clr-namespace:SeveralViewsGui.SubViews"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type subViewModels:InstallationPromptViewModel}">
+            <subViews:InstallationPromptView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type subViewModels:ProgressViewModel}">
+            <subViews:ProgressView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type subViewModels:ErrorOccuredViewModel}">
+            <subViews:ErrorOccuredView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type subViewModels:SuccessfulViewModel}">
+            <subViews:SuccessfulView />
+        </DataTemplate>
+    </Application.Resources>
+</Application>

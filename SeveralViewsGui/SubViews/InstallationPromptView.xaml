@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="SeveralViewsGui.SubViews.InstallationPromptView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SeveralViewsGui.SubViews"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="MyDarkBlue" Color="#104060" />
+    </UserControl.Resources>
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="90" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Foreground="White" FontSize="22" FontWeight="Bold" Padding="45,0,0,0" Text="ThisSMaeTitle" />
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="15" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="20" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Chapter 1 :" Foreground="White" FontSize="15" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right"/>
+            <TextBlock Text="Chapter 2 :" Foreground="White" FontSize="15" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right"/>
+            <TextBlock Text="Chapter bottom :" Foreground="White" FontSize="15" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right"/>
+            <TextBlock Text="Nothing to see here" Foreground="White" FontSize="15" Grid.Row="1" Grid.Column="2"/>
+            <TextBlock Text="Neither here" Foreground="White" FontSize="15" Grid.Row="3" Grid.Column="2"/>
+            <TextBlock Text="Hoho" Foreground="White" FontSize="15" Grid.Row="5" Grid.Column="2"/>
+        </Grid>
+        <Separator Grid.Row="2" />
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="30" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" />
+            <Button Width="60" Height="30" Content="Exit" Grid.Column="1" Background="{StaticResource MyDarkBlue}" Command="{Binding ExitCommand}" Foreground="White" />
+            <Button Width="60" Height="30" Content="Continue" Grid.Column="3" Background="{StaticResource MyDarkBlue}" Command="{Binding ContinueCommand}" Foreground="White" />
+        </Grid>
+    </Grid>
+</UserControl>
